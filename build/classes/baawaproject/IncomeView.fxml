@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="baawaproject.IncomeController">
+    <children>
+      <TableView fx:id="incomeTableView" layoutX="6.0" layoutY="71.0" prefHeight="397.0" prefWidth="1292.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="45.0" text="Id" />
+          <TableColumn fx:id="account" onEditCommit="#onEditAccountCell" prefWidth="105.0" text="Account" />
+            <TableColumn fx:id="client" onEditCommit="#onEditClientCell" prefWidth="107.0" text="Client" />
+            <TableColumn fx:id="from" onEditCommit="#onEditFromCell" prefWidth="106.0" text="From" />
+            <TableColumn fx:id="to" onEditCommit="#onEditToCell" prefWidth="96.0" text="To" />
+            <TableColumn fx:id="received" onEditCommit="#onEditReceivedCell" prefWidth="98.0" text="\$ Received" />
+            <TableColumn fx:id="actual" onEditCommit="#onEditActualCell" prefWidth="87.0" text="\$ Actual" />
+            <TableColumn fx:id="date" onEditCommit="#onEditDateCell" prefWidth="86.0" text="Date" />
+            <TableColumn fx:id="gst" editable="false" prefWidth="86.0" text="GST" />
+            <TableColumn fx:id="comment" onEditCommit="#onEditCommentCell" prefWidth="557.0" text="Comment" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cmboAccount" layoutX="14.0" layoutY="35.0" onAction="#onCmboAccountPressed" prefWidth="150.0" />
+      <Label layoutX="41.0" layoutY="12.0" text="Select Account" />
+      <ComboBox fx:id="cmboClient" layoutX="196.0" layoutY="33.0" onAction="#onCmboClientPressed" prefWidth="150.0" />
+      <Label layoutX="230.0" layoutY="12.0" text="Select Client" />
+      <TextField fx:id="txtFieldAccount" layoutX="14.0" layoutY="508.0" prefHeight="26.0" prefWidth="93.0" />
+      <TextField fx:id="txtFieldClient" layoutX="124.0" layoutY="508.0" prefHeight="26.0" prefWidth="93.0" />
+      <DatePicker fx:id="dtPckerFrom" layoutX="228.0" layoutY="508.0" prefHeight="26.0" prefWidth="124.0" showWeekNumbers="true" />
+      <DatePicker fx:id="dtPickerTo" layoutX="356.0" layoutY="508.0" prefHeight="26.0" prefWidth="124.0" showWeekNumbers="true" />
+      <TextField fx:id="txtFieldReceived" layoutX="489.0" layoutY="508.0" prefHeight="26.0" prefWidth="93.0" />
+      <TextField fx:id="txtFieldActual" layoutX="599.0" layoutY="508.0" prefHeight="26.0" prefWidth="93.0" />
+      <DatePicker fx:id="dtPickerDate" layoutX="700.0" layoutY="508.0" prefHeight="26.0" prefWidth="124.0" showWeekNumbers="true" />
+      <TextArea fx:id="txtAreaComments" layoutX="829.0" layoutY="491.0" prefHeight="42.0" prefWidth="245.0" />
+      <Label layoutX="36.0" layoutY="483.0" prefHeight="16.0" prefWidth="59.0" text="Account" />
+      <Label layoutX="151.0" layoutY="483.0" prefHeight="16.0" prefWidth="50.0" text="Client" />
+      <Label layoutX="261.0" layoutY="483.0" prefHeight="16.0" prefWidth="40.0" text="From" />
+      <Label layoutX="398.0" layoutY="483.0" prefHeight="16.0" prefWidth="40.0" text="To" />
+      <Label layoutX="497.0" layoutY="483.0" prefHeight="16.0" prefWidth="85.0" text="\$ Received" />
+      <Label layoutX="613.0" layoutY="483.0" prefHeight="16.0" prefWidth="67.0" text="\$ Actual" />
+      <Label layoutX="742.0" layoutY="483.0" prefHeight="16.0" prefWidth="40.0" text="Date" />
+      <Label layoutX="909.0" layoutY="471.0" prefHeight="16.0" prefWidth="85.0" text="Comments" />
+      <Button fx:id="btnAddRecord" layoutX="1200.0" layoutY="508.0" mnemonicParsing="false" onAction="#onBtnAddRecordPressed" text="Add Record" />
+      <Button fx:id="btnDeleteRecord" layoutX="1183.0" layoutY="35.0" mnemonicParsing="false" onAction="#onBtnDeleteRecordPressed" text="Delete Record" />
+      <TextField fx:id="txtFieldReceivedTotal" editable="false" layoutX="398.0" layoutY="33.0" prefHeight="26.0" prefWidth="111.0" />
+      <Label layoutX="405.0" layoutY="14.0" text="Total Received" />
+      <TextField fx:id="txtFieldActualTotal" editable="false" layoutX="536.0" layoutY="32.0" prefHeight="26.0" prefWidth="111.0" />
+      <Label layoutX="553.0" layoutY="14.0" text="Total Actual" />
+      <CheckBox fx:id="chkBoxGst" layoutX="1082.0" layoutY="512.0" mnemonicParsing="false" text="Include GST" />
+      <Label layoutX="681.0" layoutY="14.0" text="GST Collected" />
+      <TextField fx:id="txtFieldGstTotal" editable="false" layoutX="671.0" layoutY="31.0" prefHeight="26.0" prefWidth="111.0" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="1316.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="baawaproject.ExpenseController">
+    <children>
+      <TableView fx:id="expenseTableView" layoutX="6.0" layoutY="71.0" prefHeight="403.0" prefWidth="1299.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="45.0" text="Id" />
+            <TableColumn fx:id="date" onEditCommit="#onEditDateCell" prefWidth="101.99993896484375" text="Date" />
+            <TableColumn fx:id="account" onEditCommit="#onEditAccountCell" prefWidth="158.00003051757812" text="Account" />
+          <TableColumn fx:id="category" onEditCommit="#onEditCategoryCell" prefWidth="197.0" text="Category" />
+            <TableColumn fx:id="description" onEditCommit="#onEditDescriptionCell" prefWidth="396.0" text="Expense Description" />
+            <TableColumn fx:id="amount" onEditCommit="#onEditAmountCell" prefWidth="90.0" text="\$ Amount" />
+            <TableColumn fx:id="paidby" minWidth="0.0" onEditCommit="#onEditPaidByCell" prefWidth="126.0" text="Paid By" />
+            <TableColumn fx:id="paidto" onEditCommit="#onEditPaidToCell" prefWidth="119.0" text="Paid To" />
+            <TableColumn fx:id="gst" onEditCommit="#onEditGstCell" prefWidth="62.0" text="\$ GST" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cmboCategory" layoutX="216.0" layoutY="33.0" onAction="#onCmboCategoryPressed" prefHeight="26.0" prefWidth="233.0" />
+      <Label layoutX="287.0" layoutY="10.0" text="Expense Category" />
+      <ComboBox fx:id="cmboPaidBy" layoutX="482.0" layoutY="32.0" onAction="#onCmboPaidByPressed" prefWidth="150.0" />
+      <Label layoutX="533.0" layoutY="10.0" text="Paid By" />
+      <TextField fx:id="txtFieldCategory" layoutX="287.0" layoutY="508.0" prefHeight="26.0" prefWidth="119.0" />
+      <DatePicker fx:id="dtPckerDate" layoutX="14.0" layoutY="508.0" prefHeight="26.0" prefWidth="124.0" showWeekNumbers="true" />
+      <TextField fx:id="txtFieldPaidBy" layoutX="880.0" layoutY="508.0" prefHeight="26.0" prefWidth="93.0" />
+      <Label layoutX="36.0" layoutY="483.0" prefHeight="16.0" prefWidth="40.0" text="Date" />
+      <Label layoutX="313.0" layoutY="483.0" prefHeight="16.0" prefWidth="67.0" text="Category" />
+      <Label layoutX="901.0" layoutY="483.0" prefHeight="16.0" prefWidth="51.0" text="Paid By" />
+      <Label layoutX="1009.0" layoutY="483.0" prefHeight="16.0" prefWidth="51.0" text="Paid To" />
+      <Button fx:id="btnAddRecord" layoutX="1208.0" layoutY="508.0" mnemonicParsing="false" onAction="#onBtnAddRecordPressed" text="Add Record" />
+      <Button fx:id="btnDeleteRecord" layoutX="1186.0" layoutY="32.0" mnemonicParsing="false" onAction="#onBtnDeleteRecordPressed" text="Delete Record" />
+      <TextField fx:id="txtFieldPaidTo" layoutX="983.0" layoutY="508.0" prefHeight="26.0" prefWidth="93.0" />
+      <TextField fx:id="txtFieldDescription" layoutX="416.0" layoutY="508.0" prefHeight="26.0" prefWidth="348.0" />
+      <Label layoutX="557.0" layoutY="483.0" prefHeight="16.0" prefWidth="75.0" text="Description" />
+      <ComboBox fx:id="cmboPaidTo" layoutX="658.0" layoutY="32.0" onAction="#onCmboPaidToPressed" prefWidth="150.0" />
+      <Label layoutX="716.0" layoutY="10.0" text="Paid To" />
+      <TextField fx:id="txtFieldExpenseTotal" editable="false" layoutX="893.0" layoutY="33.0" prefHeight="26.0" prefWidth="124.0" />
+      <TextField fx:id="txtFieldGstTotal" editable="false" layoutX="1030.0" layoutY="32.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="txtFieldAmount" layoutX="777.0" layoutY="508.0" prefHeight="26.0" prefWidth="93.0" />
+      <Label layoutX="798.0" layoutY="483.0" prefHeight="16.0" prefWidth="60.0" text="Amount" />
+      <Label layoutX="909.0" layoutY="14.0" prefHeight="16.0" prefWidth="93.0" text="Total Expense" />
+      <Label layoutX="1072.0" layoutY="13.0" prefHeight="16.0" prefWidth="67.0" text="Total GST" />
+      <TextField fx:id="txtFieldAccount" layoutX="154.0" layoutY="508.0" prefHeight="26.0" prefWidth="124.0" />
+      <Label layoutX="186.0" layoutY="483.0" prefHeight="16.0" prefWidth="60.0" text="Account" />
+      <ComboBox fx:id="cmboAccount" layoutX="24.0" layoutY="32.0" onAction="#onCmboAccountPressed" prefHeight="26.0" prefWidth="166.0" />
+      <Label layoutX="48.0" layoutY="10.0" text="Expense Account" />
+      <CheckBox fx:id="chkBoxGst" layoutX="1095.0" layoutY="512.0" mnemonicParsing="false" text="Include GST" />
+    </children>
+</AnchorPane>
